@@ -33,7 +33,7 @@ class App extends Component {
       */
       
       <div className="container-fluid">
-          <Achievment />
+          <Profile />
        </div>
     );
   }

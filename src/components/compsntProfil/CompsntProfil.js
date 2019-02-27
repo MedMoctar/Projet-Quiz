@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Composant from '../composant/Composant';
 
 export default class CompsntProfil extends Component {
   render() {
@@ -15,7 +16,7 @@ export default class CompsntProfil extends Component {
                     <div className="card-text" style={{marginLeft : '10px'}}>
                         Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                     </div>
-                    <a style={{ margin : '10px'}}  href="#" className="btn btn-success">Consulter</a>
+                        <div style={{marginBottom:'10px'}}> <Composant /> </div>
                     </div>
                 </div>
             </div>
@@ -30,7 +31,7 @@ export default class CompsntProfil extends Component {
                     <div className="card-text" style={{marginLeft : '10px'}}>
                         Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                     </div>
-                    <a style={{ margin : '10px'}}  href="#" className="btn btn-success">Consulter</a>
+                        <div style={{marginBottom:'10px'}}> <Composant /> </div>
                     </div>
                 </div>
             </div>
@@ -45,7 +46,7 @@ export default class CompsntProfil extends Component {
                     <div className="card-text" style={{marginLeft : '10px'}}>
                         Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                     </div>
-                    <a style={{ margin : '10px'}}  href="#" className="btn btn-success">Consulter</a>
+                        <div style={{marginBottom:'10px'}}> <Composant /> </div>
                     </div>
                 </div>
             </div>
@@ -63,7 +64,7 @@ export default class CompsntProfil extends Component {
                         <div className="card-text" style={{marginLeft : '10px'}}>
                             Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                         </div>
-                        <a style={{ margin : '10px'}}  href="#" className="btn btn-success">Consulter</a>
+                            <div style={{marginBottom:'10px'}}> <Composant /> </div>
                         </div>
                 </div>
             </div>
@@ -78,7 +79,7 @@ export default class CompsntProfil extends Component {
                         <div className="card-text" style={{marginLeft : '10px'}}>
                             Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                         </div>
-                        <a style={{ margin : '10px'}}  href="#" className="btn btn-success">Consulter</a>
+                            <div style={{marginBottom:'10px'}}> <Composant /> </div>
                         </div>
                 </div>
             </div>
@@ -93,7 +94,7 @@ export default class CompsntProfil extends Component {
                         <div className="card-text" style={{marginLeft : '10px'}}>
                             Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                         </div>
-                        <a style={{ margin : '10px'}}  href="#" className="btn btn-success">Consulter</a>
+                            <div style={{marginBottom:'10px'}}> <Composant /> </div>
                         </div>
                 </div>
             </div>
