@@ -7,7 +7,6 @@ export default class Profile extends Component {
     return (
         //le dive pricipale
         <div className="container">
-            <NavigationBar />
             <h3 style={{margin:'20px', paddingLeft: '8px' }}> My Profile </h3>
             {/* le dive contient le composant */}
             <div >

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router';
 
 
 class Login extends Component {
@@ -22,13 +22,12 @@ class Login extends Component {
                             <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                         </div>
                         <div align="center">
-                            {/*  */}
-                              <Link to="/hom">
+                            <Link to="/Hom">
                                <button type="submit" className="btn btn-primary">log in</button>
-                               </Link>
-                               <Link to="/Inscription">
+                            </Link>
+                            <Link to="/Inscription">
                                <button type="submit" className="btn btn-primary" style={{marginLeft:'20px'}}>Sign up</button>
-                               </Link>
+                            </Link>
                         </div>
 
                     </form>    
