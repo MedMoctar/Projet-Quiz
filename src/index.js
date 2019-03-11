@@ -8,7 +8,7 @@ import Inscription from '../src/Screens/Inscription/Inscription';
 import Login from '../src/Screens/Login/Login';
 import Profile from '../src/Screens/Profile/Profile';
 import Quiz from './Screens/quiz/Quiz';
-import DashBoard from './Screens/dashBoard/DashBoard';
+import DashBoard from './Screens/DashBoard/DashBoard';
 
 
 import * as serviceWorker from './serviceWorker';
