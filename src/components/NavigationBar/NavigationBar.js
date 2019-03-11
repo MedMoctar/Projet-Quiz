@@ -8,7 +8,7 @@ export default class NavigationBar extends Component {
     return ( 
         <div className="container" style={{marginTop:'10px'}}>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <Link to="/Hom" className="navbar-brand"> <i className="fa fa-home"> </i>Home  </Link>
+                    <Link to="/dashBoard" className="navbar-brand"> <i className="fa fa-home"> </i>DashBoard  </Link>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">

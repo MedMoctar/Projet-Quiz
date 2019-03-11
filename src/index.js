@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Hom from '../src/Screens/Hom/Hom';
 import Achievment from '../src/Screens/Achievment/Achievment';
 import Challenge from '../src/Screens/challenge/Challenge';
 import Inscription from '../src/Screens/Inscription/Inscription';
 import Login from '../src/Screens/Login/Login';
 import Profile from '../src/Screens/Profile/Profile';
+import Quiz from './Screens/quiz/Quiz';
+import DashBoard from './Screens/dashBoard/DashBoard';
+
 
 import * as serviceWorker from './serviceWorker';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
@@ -15,11 +17,13 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path='/' component={App} >
-            <IndexRoute component={Hom} />
+            <IndexRoute component={DashBoard} />
             <Route path='/Achievment' component={Achievment} />
             <Route path='/Challenge' component={Challenge} />
             <Route path='/Profile' component={Profile} />
-            <Route path='/Hom' component={Hom} />
+            <Route path='/Quiz' component={Quiz} />
+            <Route path='/dashBoard' component={DashBoard} />
+            
         </Route>
 
         <Route path='/Login' component={Login} />
