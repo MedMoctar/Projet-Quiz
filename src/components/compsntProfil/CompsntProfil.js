@@ -16,7 +16,7 @@ export default class CompsntProfil extends Component {
                     <div className="card-text" style={{marginLeft : '10px'}}>
                         Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                     </div>
-                        <div style={{marginBottom:'10px'}}> <Composant /> </div>
+                        <div style={{marginBottom:'10px'}}> <Composant id='Pyton' /> </div>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ export default class CompsntProfil extends Component {
                     <div className="card-text" style={{marginLeft : '10px'}}>
                         Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                     </div>
-                        <div style={{marginBottom:'10px'}}> <Composant /> </div>
+                        <div style={{marginBottom:'10px'}}> <Composant id='PHP' /> </div>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@ export default class CompsntProfil extends Component {
                     <div className="card-text" style={{marginLeft : '10px'}}>
                         Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                     </div>
-                        <div style={{marginBottom:'10px'}}> <Composant /> </div>
+                        <div style={{marginBottom:'10px'}}> <Composant id='c' /> </div>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@ export default class CompsntProfil extends Component {
                         <div className="card-text" style={{marginLeft : '10px'}}>
                             Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                         </div>
-                            <div style={{marginBottom:'10px'}}> <Composant /> </div>
+                            <div style={{marginBottom:'10px'}}> <Composant id='d' /> </div>
                         </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@ export default class CompsntProfil extends Component {
                         <div className="card-text" style={{marginLeft : '10px'}}>
                             Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                         </div>
-                            <div style={{marginBottom:'10px'}}> <Composant /> </div>
+                            <div style={{marginBottom:'10px'}}> <Composant id='e' /> </div>
                         </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@ export default class CompsntProfil extends Component {
                         <div className="card-text" style={{marginLeft : '10px'}}>
                             Pour savoir votre score et votre classement veillez cliquez sur le bouton ci-dessous
                         </div>
-                            <div style={{marginBottom:'10px'}}> <Composant /> </div>
+                            <div style={{marginBottom:'10px'}}> <Composant id='f' /> </div>
                         </div>
                 </div>
             </div>

@@ -5,14 +5,13 @@ import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactst
 export default class Composant extends Component {
   render() {
     return (
-     
       <div>
-        <Button id="b1" 
+        <Button id={this.props.id} 
           type="button">
           Consulter votre score
         </Button>
         <UncontrolledPopover placement="bottom" 
-          target="b1">
+          target={this.props.id} >
           <PopoverHeader>Score</PopoverHeader>
           <PopoverBody>
             <table>

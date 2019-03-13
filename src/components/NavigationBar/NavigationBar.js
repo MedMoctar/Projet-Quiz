@@ -8,7 +8,7 @@ export default class NavigationBar extends Component {
     return ( 
         <div className="container" style={{marginTop:'10px'}}>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <Link to="/Hom" className="navbar-brand"> <i className="fa fa-home"> </i>Home  </Link>
+                    <Link to="/dashBoard" className="navbar-brand"> <i className="fa fa-home"> </i>DashBoard  </Link>
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
@@ -27,7 +27,7 @@ export default class NavigationBar extends Component {
                         </li>
 
                         <li className="nav-item active">
-                            <a className="nav-link" href="#"><i className="fa fa-user"></i>Friends</a>
+                            <Link to="/Friends" className="nav-link"><i className="fa fa-user"></i>Friends</Link>
                         </li>
 
                         <li className="nav-item active">
