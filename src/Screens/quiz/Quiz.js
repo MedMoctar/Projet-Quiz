@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 
 export default class Quiz extends Component {
@@ -155,5 +156,5 @@ export default class Quiz extends Component {
         </div>
       </div>
     );
-  }
-}
+                      }
+                    }
