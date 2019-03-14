@@ -6,7 +6,7 @@ export default class DashBoard extends Component {
     return (
       <div className="container">
          <div style={{width:'100%'}}>
-            <DashboardMenu />
+          <DashboardMenu />
         </div>  
       </div>
     )
