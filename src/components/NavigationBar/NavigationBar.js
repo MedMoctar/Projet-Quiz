@@ -31,7 +31,7 @@ export default class NavigationBar extends Component {
                         </li>
 
                         <li className="nav-item active">
-                            <a className="nav-link" href="#"><i className="fa fa-cog"></i>Setting</a>
+                            <Link to="/Settings" className="nav-link" ><i className="fa fa-cog"></i>Setting</Link>
                         </li>
 
                         <li className="nav-item active">

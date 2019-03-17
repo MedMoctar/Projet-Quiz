@@ -8,11 +8,12 @@ import Inscription from '../src/Screens/Inscription/Inscription';
 import Login from '../src/Screens/Login/Login';
 import Profile from '../src/Screens/Profile/Profile';
 import Quiz from './Screens/quiz/Quiz';
-import DashBoard from './Screens/dashBoard/DashBoard';
+import DashBoard from './Screens/DashBoard/DashBoard';
 
 
 import * as serviceWorker from './serviceWorker';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import Settings from './Screens/Settings/Settings';
 
 ReactDOM.render(
     <Router history={hashHistory}>
@@ -20,6 +21,7 @@ ReactDOM.render(
             <IndexRoute component={DashBoard} />
             <Route path='/Achievment' component={Achievment} />
             <Route path='/Challenge' component={Challenge} />
+            <Route path='/Settings' component={Settings} />
             <Route path='/Profile' component={Profile} />
             <Route path='/Quiz' component={Quiz} />
             <Route path='/dashBoard' component={DashBoard} />
