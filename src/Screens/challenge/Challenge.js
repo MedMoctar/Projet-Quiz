@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import Composant_achievment_RcmdGm from '../../components/composant_achievment_RcmdGm/Composant_achievment_RcmdGm';
-import ComposantNiveau from '../../components/composantNiveau/ComposantNiveau';
-import { Link } from "react-router";
+import ComposantChallMstPlyd from "../../components/composantChallMstPlyd/ComposantChallMstPlyd";
+import ComposantChallReco from "../../components/composantChallReco/ComposantChallReco";
 
 export default class Challenge extends Component {
   render() {
     {
-      /*console.log(this.state.currentCategorie);*/
+      /*console.log(this.state.currentCategorie);*/ 
     }
     return (
       <div className="container">
@@ -53,7 +53,7 @@ export default class Challenge extends Component {
           </li>
         </ul>
         <div style={{margin:'20px'}}>
-              <ComposantNiveau />
+              
         </div>
         <div className="tab-content" id="myTabContent">
           <div
@@ -62,7 +62,7 @@ export default class Challenge extends Component {
             role="tabpanel"
             aria-labelledby="home-tab"
           >
-            <p style={{marginTop:'20px'}}> les nouveau quiz </p>
+            <h4 style={{marginTop:'20px'}}> The new quizzes </h4>
             <div style={{marginTop:'20px'}}>
               <Composant_achievment_RcmdGm />
             </div>
@@ -73,9 +73,9 @@ export default class Challenge extends Component {
             role="tabpanel"
             aria-labelledby="profile-tab"
           >
-            <p style={{marginTop:'20px'}}> les quizs les plus joués </p>
+            <h4 style={{marginTop:'20px'}}> The most played quizzes </h4>
             <div style={{marginTop:'20px'}}>
-              <Composant_achievment_RcmdGm />
+              <ComposantChallMstPlyd />
             </div>
           </div>
           <div
@@ -84,9 +84,9 @@ export default class Challenge extends Component {
             role="tabpanel"
             aria-labelledby="contact-tab"
           >
-            <p style={{marginTop:'20px'}}> les quizs recomendés </p>
+            <h4 style={{marginTop:'20px'}}> Recommended quizzes </h4>
             <div style={{marginTop:'20px'}}>
-              <Composant_achievment_RcmdGm />
+              <ComposantChallReco /> 
             </div>
             
           </div>

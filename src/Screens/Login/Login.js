@@ -22,7 +22,7 @@ class Login extends Component {
                             <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                         </div>
                         <div align="center">
-                            <Link to="/Hom">
+                            <Link to="/dashBoard">
                                <button type="submit" className="btn btn-primary">log in</button>
                             </Link>
                             <Link to="/Inscription">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Champ from '../../components/Champ/Champ';
-//import { Link } from 'react-router-dom';
+import {Link} from 'react-router';
 
 export default class Inscription extends Component {
   render() {
@@ -23,9 +23,10 @@ export default class Inscription extends Component {
                     
                     <Champ label="Password Confirmation" type="password" placeholder="Password" />
                     <div align="center">
-                         {/* <Link to="/hom"> */}
+                          
+                         <Link to="/Login">
                             <button type="submit" className="btn btn-primary"> Sign Up</button>
-                         {/* </Link> */}
+                       </Link>
                         <button type="reset" className="btn btn-primary" style={{marginLeft:'20px'}}>Cancel</button>
                     </div>
                 </form>    
