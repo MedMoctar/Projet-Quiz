@@ -5,6 +5,8 @@ export default class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userAnswers:this.initlist(10),
+
       quizList: [
         {
           question: "question1",
@@ -21,7 +23,9 @@ export default class Quiz extends Component {
             {
               r4: "response4"
             }
-          ]
+          ],
+          
+
         },
         {
           question: "question2",
@@ -38,7 +42,8 @@ export default class Quiz extends Component {
             {
               r4: "response24"
             }
-          ]
+          ],
+          
         },
         {
           question: "question3",
@@ -55,7 +60,7 @@ export default class Quiz extends Component {
             {
               r4: "response43"
             }
-          ]
+          ],
         }
       ],
       currentIndex: 0
@@ -75,7 +80,55 @@ export default class Quiz extends Component {
       });
     }
   };
+
+    initlist =(nb)=>{
+     const ListResp=[];
+     var i;
+     for(i=0;i<nb;i++){
+         ListResp.push([]);
+     }
+     return ListResp;
+  }
+
+  computeResult = (correctAnwers, userAnswers)=>{
+       let result=0;
+       for(let i=0;i<correctAnwers.length;i++){
+           if(correctAnwers[i].length===userAnswers[i].length){
+               for(let j=0;j<userAnswers[i].length;j++){
+                   if(!correctAnwers[i].include(userAnswers[i][j])){
+                       break;
+                   }else if(j===userAnswers[i].length-1){
+                        result=result+1;
+                   }
+               }
+           }
+       }
+       return result;
+  }
+
+  selectResponse = (number) => {
+       const list=this.state.userAnswers[this.state.currentIndex]
+      if(!list.includes(number)){
+          list.push(number);
+          this.state.userAnswers[this.state.currentIndex]=list;
+           this.setState({
+         
+            userAnswers:this.state.userAnswers
+        });
+      }else{
+         
+         list.splice(list.indexOf(number),1);
+         this.state.userAnswers[this.state.currentQuestion]=list;
+          this.setState({
+            userAnswers:this.state.userAnswers
+        });
+        
+      }
+     
+  };
+
   render() {
+      console.log(this.state.userAnswers);
     return (
       <div className="container">
         Page Quiz
@@ -93,7 +146,7 @@ export default class Quiz extends Component {
               <table>
                 <tr>
                   <td>
-                    <button id="btn0">
+                    <button id="btn0" onClick={()=> this.selectResponse(0)}>
                       <span id="choice0">
                         {
                           this.state.quizList[this.state.currentIndex]
@@ -103,7 +156,9 @@ export default class Quiz extends Component {
                     </button>
                   </td>
                   <td>
-                    <button id="btn1">
+                    <button
+                    onClick={()=> this.selectResponse(1)}
+                     id="btn1">
                       <span id="choice1">
                         {" "}
                         {
@@ -117,7 +172,7 @@ export default class Quiz extends Component {
 
                 <tr id="tr">
                   <td>
-                    <button id="btn2">
+                    <button id="btn2" onClick={()=> this.selectResponse(2)}>
                       <span id="choice2">
                         {" "}
                         {
@@ -128,7 +183,7 @@ export default class Quiz extends Component {
                     </button>
                   </td>
                   <td>
-                    <button id="btn3">
+                    <button id="btn3" onClick={()=> this.selectResponse(3)}>
                       <span id="choice3">
                         {" "}
                         {
