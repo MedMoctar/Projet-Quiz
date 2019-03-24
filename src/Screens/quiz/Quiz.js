@@ -5,9 +5,10 @@ export default class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      resultat:0,
       userAnswers:this.initlist(3),
      // jsonQuiz :this.getQuizById('5c72b7126cc7633cd4898490'),
-
+      correctAnswers:[[0],[1,2],[0]],
       quizList: [
         {
           question: "question1",
@@ -72,7 +73,30 @@ export default class Quiz extends Component {
       this.setState({
         currentIndex: this.state.currentIndex + 1
       });
+    }else if(this.state.currentIndex == this.state.quizList.length - 1){
+
+     this.setState({
+        resultat:this.computeResult(this.state.correctAnswers,this.state.userAnswers),
+        resultat:this.state.resultat+1,
+        
+      });
     }
+  };
+
+  computeResult = (correctAnwers, userAnswers)=>{
+       let result=0;
+       for(let i=0;i<correctAnwers.length;i++){
+           if(correctAnwers[i].length===userAnswers[i].length){
+               for(let j=0;j<userAnswers[i].length;j++){
+                   if(!correctAnwers[i].includes(userAnswers[i][j])){
+                       break;
+                   }else if(j===userAnswers[i].length-1){
+                        result=result+1;
+                   }
+               }
+           }
+       }
+       return result;
   };
   previousQuestion = () => {
     if (this.state.currentIndex > 0) {
@@ -89,22 +113,6 @@ export default class Quiz extends Component {
          ListResp.push([]);
      }
      return ListResp;
-  }
-
-  computeResult = (correctAnwers, userAnswers)=>{
-       let result=0;
-       for(let i=0;i<correctAnwers.length;i++){
-           if(correctAnwers[i].length===userAnswers[i].length){
-               for(let j=0;j<userAnswers[i].length;j++){
-                   if(!correctAnwers[i].include(userAnswers[i][j])){
-                       break;
-                   }else if(j===userAnswers[i].length-1){
-                        result=result+1;
-                   }
-               }
-           }
-       }
-       return result;
   }
   
  // @param {String} quizId 
@@ -145,6 +153,7 @@ export default class Quiz extends Component {
 
   render() {
       console.log(this.state.userAnswers);
+      console.log(this.state.resultat);
     return (
       <div className="container">
         Page Quiz
@@ -214,7 +223,33 @@ export default class Quiz extends Component {
             </div>
             <div className="d-flex justify-content-around w-100 mt-5">
               <button className="btn btn-dark" onClick={() => this.previousQuestion()}>previous</button>
-              <button className="btn btn-dark" onClick={() => this.nextQuestion()}>next</button>
+               {
+                this.state.currentIndex < 2 ?
+                <button className="btn btn-dark" onClick={() => this.nextQuestion()}>next</button> :
+                <button type="button" className="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                   next
+                </button>
+            }
+            <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div className="modal-body">
+                    
+                    {this.state.resultat}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+            </div>
             </div>
             <hr style={{ marginTop: "50px" }} />
             <footer>
