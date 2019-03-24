@@ -6,9 +6,9 @@ export default class Quiz extends Component {
     super(props);
     this.state = {
       resultat:0,
-      userAnswers:this.initlist(3),
+      userAnswers:this.initlist(10),
      // jsonQuiz :this.getQuizById('5c72b7126cc7633cd4898490'),
-      correctAnswers:[[0],[1,2],[0]],
+      correctAnswers:[[0],[1,2],[0],[2],[3],[3,2],[3],[3],[3],[3]],
       quizList: [
         {
           question: "question1",
@@ -62,8 +62,134 @@ export default class Quiz extends Component {
             {
               r4: "response43"
             }
-          ],
-        }
+        ],},
+             {
+            question: "question4",
+            answers: [
+                {
+                r1: "response41"
+                },
+                {
+                r2: "response42"
+                },
+                {
+                r3: "response43"
+                },
+                {
+                r4: "response44"
+                }
+             ],
+          
+             },
+             {
+            question: "question5",
+            answers: [
+                {
+                r1: "response51"
+                },
+                {
+                r2: "response52"
+                },
+                {
+                r3: "response53"
+                },
+                {
+                r4: "response54"
+                }
+             ],
+          
+             },
+             {
+            question: "question6",
+            answers: [
+                {
+                r1: "response61"
+                },
+                {
+                r2: "response62"
+                },
+                {
+                r3: "response63"
+                },
+                {
+                r4: "response64"
+                }
+             ],
+          
+             },
+             {
+            question: "question7",
+            answers: [
+                {
+                r1: "response71"
+                },
+                {
+                r2: "response72"
+                },
+                {
+                r3: "response73"
+                },
+                {
+                r4: "response74"
+                }
+             ],
+          
+             },
+             {
+            question: "question8",
+            answers: [
+                {
+                r1: "response81"
+                },
+                {
+                r2: "response82"
+                },
+                {
+                r3: "response83"
+                },
+                {
+                r4: "response54"
+                }
+             ],
+          
+             },
+             {
+            question: "question9",
+            answers: [
+                {
+                r1: "response91"
+                },
+                {
+                r2: "response92"
+                },
+                {
+                r3: "response93"
+                },
+                {
+                r4: "response94"
+                }
+             ],
+          
+             },
+             {
+            question: "question10",
+            answers: [
+                {
+                r1: "response101"
+                },
+                {
+                r2: "response102"
+                },
+                {
+                r3: "response103"
+                },
+                {
+                r4: "response104"
+                }
+             ],
+          
+             },
+             
       ],
       currentIndex: 0
     };
@@ -73,11 +199,10 @@ export default class Quiz extends Component {
       this.setState({
         currentIndex: this.state.currentIndex + 1
       });
-    }else if(this.state.currentIndex == this.state.quizList.length - 1){
-
+    }else if(this.state.currentIndex == this.state.quizList.length -1){
      this.setState({
+         
         resultat:this.computeResult(this.state.correctAnswers,this.state.userAnswers),
-        resultat:this.state.resultat+1,
         
       });
     }
@@ -224,28 +349,31 @@ export default class Quiz extends Component {
             <div className="d-flex justify-content-around w-100 mt-5">
               <button className="btn btn-dark" onClick={() => this.previousQuestion()}>previous</button>
                {
-                this.state.currentIndex < 2 ?
+                this.state.currentIndex < 9 ?
                 <button className="btn btn-dark" onClick={() => this.nextQuestion()}>next</button> :
-                <button type="button" className="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+                <button type="button" className="btn btn-dark" data-toggle="modal" onClick={() => this.nextQuestion()} data-target="#exampleModalCenter">
                    next
                 </button>
             }
-            <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div className="modal fade" id="exampleModalCenter"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <h5 className="modal-title" id="exampleModalCenterTitle">The Score :</h5>
                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div className="modal-body">
-                    
-                    {this.state.resultat}
+                <div className="modal-body" style={{height:'350px'}}>
+                   <div style={{marginLeft:'120px'}}><img className="rounded-circle" src={require('../../assets/images/th.jpg')}  style={{height: '200px', width:'200px'}} /></div>
+                    <br/>
+                    <div style={{marginLeft:'150px'}}><h4>Your Score is :</h4></div>
+                    <br/>
+                    <div style={{marginLeft:'200px'}}><h4>{this.state.resultat}/10</h4></div>
                 </div>
-                <div class="modal-footer">
+                <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary">Save changes</button>
+                    <button type="button" className="btn btn-primary" >Save changes</button>
                 </div>
                 </div>
             </div>
