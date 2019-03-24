@@ -6,6 +6,7 @@ export default class Quiz extends Component {
     super(props);
     this.state = {
       userAnswers:this.initlist(3),
+     // jsonQuiz :this.getQuizById('5c72b7126cc7633cd4898490'),
 
       quizList: [
         {
@@ -105,6 +106,21 @@ export default class Quiz extends Component {
        }
        return result;
   }
+  
+ // @param {String} quizId 
+  //@return promise
+ 
+    /*getQuizById = async (quizId) => {
+    const url = `http://10.0.2.2:8000/quizs/${quizId}`;
+    // eslint-disable-next-line no-undef
+    const response = await fetch(url);
+    try {
+        const json = await response.json();
+        return json;
+    } catch (e) {
+        console.log(`Fetch failed: ${e}`);
+    }
+};*/
 
   selectResponse = (number) => {
        const list=this.state.userAnswers[this.state.currentIndex]
