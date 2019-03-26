@@ -7,8 +7,12 @@ import Challenge from '../src/Screens/challenge/Challenge';
 import Inscription from '../src/Screens/Inscription/Inscription';
 import Login from '../src/Screens/Login/Login';
 import Profile from '../src/Screens/Profile/Profile';
-import Quiz from './Screens/quiz/Quiz';
-import DashBoard from './Screens/DashBoard/DashBoard';
+import DashBoard from './Screens/dashBoard/DashBoard';
+import Friends from './Screens/friens/Friends';
+import QuizFacile from './Screens/quiz/QuizFacile';
+import QuizDificile from './Screens/quiz/QuizDificile';
+import QuizExpert from './Screens/quiz/QuizExpert';
+import QuizFacilePhp from './Screens/quiz/quizPhp/QuizFacilePhp';
 
 
 import * as serviceWorker from './serviceWorker';
@@ -23,8 +27,12 @@ ReactDOM.render(
             <Route path='/Challenge' component={Challenge} />
             <Route path='/Settings' component={Settings} />
             <Route path='/Profile' component={Profile} />
-            <Route path='/Quiz' component={Quiz} />
-            <Route path='/dashBoard' component={DashBoard} />
+            <Route path='/dashBoard' component={DashBoard} /> 
+            <Route path='/friends' component={Friends} />
+            <Route path='/Quiz/medium' component={QuizFacile} /> 
+            <Route path='/Quiz/hard' component={QuizDificile} /> 
+            <Route path='/Quiz/expert' component={QuizExpert} />
+            <Route path='/Quiz/quizPhp/medium' component={QuizFacilePhp} />
             
         </Route>
 

@@ -1,15 +1,28 @@
 import React, { Component } from "react";
 
 export default class ComposantNiveau extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      choice: ''
+    }
+  }
+  handleChoice= (e) => {
+    console.log(e.target.value)
+    this.setState({
+      choice: e.target.value
+    });
+  }
   render() {
     return (
-      <div className="container">
+      <div className="container" id={this.props.id}> 
         <button
           type="button"
           className="btn btn-primary"
           data-toggle="modal"
           data-target="#exampleModal"
           data-whatever="@mdo"
+          
         >
           Levels
         </button>
@@ -21,7 +34,7 @@ export default class ComposantNiveau extends Component {
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div className="modal-dialog" role="document">
+          <div className="modal-dialog" role="document"> 
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
@@ -49,11 +62,11 @@ export default class ComposantNiveau extends Component {
                           type="radio"
                           name="gridRadios"
                           id="gridRadios1"
-                          value="option1"
-                          checked
+                          value="medium"
+                          onChange={this.handleChoice}
                         />
                         <label className="form-check-label" for="gridRadios1">
-                          Level Meduim
+                          Level Medium
                         </label>
                       </div>
 
@@ -63,9 +76,10 @@ export default class ComposantNiveau extends Component {
                           type="radio"
                           name="gridRadios"
                           id="gridRadios2"
-                          value="option2"
+                          value="hard"
+                          onChange={this.handleChoice}
                         />
-                        <label className="form-check-label" for="gridRadios2">
+                        <label className="form-check-label" onClicck={() => this.handleChoice('hard')} for="gridRadios2">
                           Level Hard
                         </label>
                       </div>
@@ -76,9 +90,10 @@ export default class ComposantNiveau extends Component {
                           type="radio"
                           name="gridRadios"
                           id="gridRadios2"
-                          value="option2"
+                          value="expert"
+                          onChange={this.handleChoice}
                         />
-                        <label className="form-check-label" for="gridRadios2">
+                        <label className="form-check-label" onClicck={() => this.handleChoice('expert')} for="gridRadios2">
                           Level Expert
                         </label>
                       </div>
@@ -94,7 +109,7 @@ export default class ComposantNiveau extends Component {
                 >
                   Close
                 </button>
-                <button type="button" className="btn btn-primary">
+                <button type="button" onClick={()=> this.props.onValidate(this.state.choice)} className="btn btn-primary">
                   Validate
                 </button>
               </div>

@@ -1,7 +1,7 @@
-
 import React, { Component } from "react";
+import { Link } from "react-router";
 
-export default class Quiz extends Component {
+export default class QuizDificileiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,180 +11,181 @@ export default class Quiz extends Component {
       correctAnswers:[[0],[1,2],[0],[2],[3],[3,2],[3],[3],[3],[3]],
       quizList: [
         {
-          question: "question1",
+          question: "If you a class is derived from two different classes, it’s called ",
           answers: [
             {
-              r1: "response1"
+              r1: "Multilevel Inheritance"
             },
             {
-              r2: "response2"
+              r2: "Multiple Inheritance"
             },
             {
-              r3: "response3"
+              r3: "Hierarchical Inheritance"
             },
             {
-              r4: "response4"
+              r4: "Python Inheritance"
             }
           ],
           
 
         },
         {
-          question: "question2",
+          question: "What is the output of the following code : if None:print('Hello') ?",
           answers: [
             {
-              r1: "response21"
+              r1: "False"
             },
             {
-              r2: "response22"
+              r2: "Hello"
             },
             {
-              r3: "response23"
+              r3: "Nothing will be printed"
             },
             {
-              r4: "response24"
+              r4: "Syntax error"
             }
           ],
           
         },
-        {
-          question: "question3",
-          answers: [
-            {
-              r1: "response13"
-            },
-            {
-              r2: "response23"
-            },
-            {
-              r3: "response33"
-            },
-            {
-              r4: "response43"
-            }
-        ],},
+        
              {
-            question: "question4",
+            question: "What is the correct syntax for a method ?",
             answers: [
                 {
-                r1: "response41"
+                r1: ".method"
                 },
                 {
-                r2: "response42"
+                r2: "Method."
                 },
                 {
-                r3: "response43"
+                r3: "Method()"
                 },
                 {
-                r4: "response44"
+                r4: "method =>()"
                 }
              ],
           
              },
              {
-            question: "question5",
+            question: "What is used to define a block of code (body of loop, function etc.) in Python ?",
             answers: [
                 {
-                r1: "response51"
+                r1: "Curly braces"
                 },
                 {
-                r2: "response52"
+                r2: "Parenthesis"
                 },
                 {
-                r3: "response53"
+                r3: "Indentation"
                 },
                 {
-                r4: "response54"
+                r4: "Quotation"
                 }
              ],
           
              },
              {
-            question: "question6",
+              question: "What name is given to an object created by a class ?",
+              answers: [
+                {
+                  r1: "Variable"
+                },
+                {
+                  r2: "Fonction"
+                },
+                {
+                  r3: "Instance"
+                },
+                {
+                  r4: "constrictor"
+                }
+            ],},
+             {
+            question: "In the following code, (n = '5'). n is a/an ?",
             answers: [
                 {
-                r1: "response61"
+                r1: "integer"
                 },
                 {
-                r2: "response62"
+                r2: "string"
                 },
                 {
-                r3: "response63"
+                r3: "tuple"
                 },
                 {
-                r4: "response64"
+                r4: "operator"
                 }
              ],
           
              },
              {
-            question: "question7",
+            question: "What is the output of the following code : print(1, 2, 3, 4, sep='*') ?",
             answers: [
                 {
-                r1: "response71"
+                r1: "1 2 3 4"
                 },
                 {
-                r2: "response72"
+                r2: "1234"
                 },
                 {
-                r3: "response73"
+                r3: "1*2*3*4"
                 },
                 {
-                r4: "response74"
+                r4: "24"
                 }
              ],
           
              },
              {
-            question: "question8",
+            question: "What is used to take input from the user in Python?",
             answers: [
                 {
-                r1: "response81"
+                r1: "cin"
                 },
                 {
-                r2: "response82"
+                r2: "scanf()"
                 },
                 {
-                r3: "response83"
+                r3: "input()"
                 },
                 {
-                r4: "response54"
+                r4: "<>"
                 }
              ],
           
              },
              {
-            question: "question9",
+            question: "What is the output of the following code numbers = [2, 3, 4] print(numbers)?",
             answers: [
                 {
-                r1: "response91"
+                r1: "2, 3, 4"
                 },
                 {
-                r2: "response92"
+                r2: "2 3 4"
                 },
                 {
-                r3: "response93"
+                r3: "[2, 3, 4]"
                 },
                 {
-                r4: "response94"
+                r4: "[2 3 4]"
                 }
              ],
           
              },
              {
-            question: "question10",
+            question: "What is the output of the following code : print(3 >= 3)?",
             answers: [
                 {
-                r1: "response101"
+                r1: "3 >= 3"
                 },
                 {
-                r2: "response102"
+                r2: "True"
                 },
                 {
-                r3: "response103"
+                r3: "False"
                 },
                 {
-                r4: "response104"
+                r4: "None"
                 }
              ],
           
@@ -281,7 +282,7 @@ export default class Quiz extends Component {
       console.log(this.state.resultat);
     return (
       <div className="container">
-        Page Quiz
+        
         <div className="grid">
           <div id="quiz">
             <h1>Quiz</h1>
@@ -372,8 +373,10 @@ export default class Quiz extends Component {
                     <div style={{marginLeft:'200px'}}><h4>{this.state.resultat}/10</h4></div>
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary" >Save changes</button>
+                    <Link to="/Challenge">
+                        <button type="button" className="btn btn-primary" >Save changes</button>
+                    </Link>
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>  
                 </div>
                 </div>
             </div>
