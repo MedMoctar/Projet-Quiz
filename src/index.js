@@ -13,7 +13,8 @@ import QuizFacile from './Screens/quiz/QuizFacile';
 import QuizDificile from './Screens/quiz/QuizDificile';
 import QuizExpert from './Screens/quiz/QuizExpert';
 import QuizFacilePhp from './Screens/quiz/quizPhp/QuizFacilePhp';
-
+import QuizDificilPhp from './Screens/quiz/quizPhp/QuizDificilPhp';
+import QuizExpertPhp from './Screens/quiz/quizPhp/QuizExpertPhp';
 
 import * as serviceWorker from './serviceWorker';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
@@ -33,6 +34,8 @@ ReactDOM.render(
             <Route path='/Quiz/hard' component={QuizDificile} /> 
             <Route path='/Quiz/expert' component={QuizExpert} />
             <Route path='/Quiz/quizPhp/medium' component={QuizFacilePhp} />
+            <Route path='/Quiz/quizPhp/hard' component={QuizDificilPhp} />
+            <Route path='/Quiz/quizPhp/expert' component={QuizExpertPhp} />
             
         </Route>
 
