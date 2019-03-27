@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
+import Profile from '../Profile/Profile';
 
 export default class Quiz extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ export default class Quiz extends Component {
     this.state = {
       resultat:0,
       userAnswers:this.initlist(10),
+      challengeView: false,
      // jsonQuiz :this.getQuizById('5c72b7126cc7633cd4898490'),
       correctAnswers:[[0],[1,2],[0],[2],[3],[3,2],[3],[3],[3],[3]],
       quizList: [
@@ -276,11 +278,21 @@ export default class Quiz extends Component {
      
   };
 
+  goToChallenge = () => {
+    this.setState({
+      challengeView: true,
+    })
+  }
+
   render() {
+    const cView = this.state.challengeView
       console.log(this.state.userAnswers);
       console.log(this.state.resultat);
     return (
-      <div className="container">
+      <div>
+        {
+        !cView ?
+        <div className="container">
         
         <div className="grid">
           <div id="quiz">
@@ -375,7 +387,7 @@ export default class Quiz extends Component {
                     <Link to="/Challenge">
                         <button type="button" className="btn btn-primary" >Save changes</button>
                     </Link>
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>  
+                    <button type="button"  onClick={()=> this.goToChallenge()} className="btn btn-secondary" data-dismiss="modal">Close</button>  
                 </div>
                 </div>
             </div>
@@ -390,7 +402,11 @@ export default class Quiz extends Component {
             </footer>
           </div>
         </div>
+      </div>:
+      <Profile result={this.state.resultat} />
+      }
       </div>
+
     );
                       }
                     }
