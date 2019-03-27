@@ -27,7 +27,7 @@ export default class NavigationBar extends Component {
                         </li>
 
                         <li className="nav-item active">
-                            <a className="nav-link" href="#"><i className="fa fa-user"></i>Friends</a>
+                            <Link className="nav-link" to="/friends"><i className="fa fa-user"></i>Friends</Link>
                         </li>
 
                         <li className="nav-item active">
