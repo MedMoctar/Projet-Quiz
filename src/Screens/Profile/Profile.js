@@ -20,7 +20,7 @@ export default class Profile extends Component {
                         <div className="row"><h3> Classment</h3></div>
                     </div>
                     <div className="col order-12" style={{margin: '70px'}}>
-                        <div className="row"><h3> 520</h3></div>
+                        <div className="row"><h3> {this.props.result}</h3></div>
                         <div className="row"><h3> 06</h3></div>
                     </div>
                 </div>
