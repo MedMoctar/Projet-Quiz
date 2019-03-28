@@ -8,6 +8,10 @@ export default class QuizFacile extends Component {
     this.state = {
       resultat:0,
       taux:10,
+      colorClick0:false,
+      colorClick1:false,
+      colorClick2:false,
+      colorClick3:false,
       userAnswers:this.initlist(10),
       challengeView: false,
      // jsonQuiz :this.getQuizById('5c72b7126cc7633cd4898490'),
@@ -265,9 +269,31 @@ export default class QuizFacile extends Component {
       if(!list.includes(number)){
           list.push(number);
           this.state.userAnswers[this.state.currentIndex]=list;
+          if(number==0){
+              this.setState({
+                 colorClick0:this.state.colorClick0=true
+             });
+              
+            }else if(number==1){
+              this.setState({
+                 colorClick0:this.state.colorClick1=true
+             });
+              
+            } else if(number==2){
+              this.setState({
+                 colorClick0:this.state.colorClick2=true
+             });
+              
+            } else if(number==3){
+              this.setState({
+                 colorClick0:this.state.colorClick3=true
+             });
+              
+            }
            this.setState({
          
             userAnswers:this.state.userAnswers
+            
         });
       }else{
          
@@ -296,6 +322,13 @@ export default class QuizFacile extends Component {
       const styles = {
         textinput: {
             width:this.state.taux + '%'
+            
+        }
+     }
+
+     const stylesButton = {
+        textColor: {
+            BorderColor:'red'
             
         }
      }
