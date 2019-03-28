@@ -8,6 +8,10 @@ export default class QuizDificileiz extends Component {
     this.state = {
       resultat:0,
       taux:10,
+      colorClick0:false,
+      colorClick1:false,
+      colorClick2:false,
+      colorClick3:false,
       userAnswers:this.initlist(10),
      // jsonQuiz :this.getQuizById('5c72b7126cc7633cd4898490'),
       correctAnswers:[[0],[1,2],[0],[2],[3],[3,2],[3],[3],[3],[3]],
@@ -201,7 +205,11 @@ export default class QuizDificileiz extends Component {
     if (this.state.currentIndex < this.state.quizList.length - 1) {
       this.setState({
         currentIndex: this.state.currentIndex + 1,
-        taux:this.state.taux+10
+        taux:this.state.taux+10,
+         colorClick0:false,
+        colorClick1:false,
+        colorClick2:false,
+        colorClick3:false,
       });
     }else if(this.state.currentIndex == this.state.quizList.length -1){
      this.setState({
@@ -267,22 +275,22 @@ export default class QuizDificileiz extends Component {
           this.state.userAnswers[this.state.currentIndex]=list;
           if(number==0){
               this.setState({
-                 colorClick0:this.state.colorClick0=true
+                 colorClick0:!this.state.colorClick0
              });
               
             }else if(number==1){
               this.setState({
-                 colorClick0:this.state.colorClick1=true
+                 colorClick1:!this.state.colorClick1
              });
               
             } else if(number==2){
               this.setState({
-                 colorClick0:this.state.colorClick2=true
+                 colorClick2:!this.state.colorClick2
              });
               
             } else if(number==3){
               this.setState({
-                 colorClick0:this.state.colorClick3=true
+                 colorClick3:!this.state.colorClick3
              });
               
             }
@@ -351,7 +359,7 @@ export default class QuizDificileiz extends Component {
               <table>
                 <tr>
                   <td>
-                    <button id="btn0" onClick={()=> this.selectResponse(0)}>
+                    <button id="btn0" style={{backgroundColor: `${this.state.colorClick0 ? 'blue': '#57636e' }`}} onClick={()=> this.selectResponse(0)}>
                       <span id="choice0">
                         {
                           this.state.quizList[this.state.currentIndex]
@@ -363,7 +371,7 @@ export default class QuizDificileiz extends Component {
                   <td>
                     <button
                     onClick={()=> this.selectResponse(1)}
-                     id="btn1">
+                     id="btn1" style={{backgroundColor: `${this.state.colorClick1 ? 'blue': '#57636e' }`}}>
                       <span id="choice1">
                         {" "}
                         {
@@ -377,7 +385,7 @@ export default class QuizDificileiz extends Component {
 
                 <tr id="tr">
                   <td>
-                    <button id="btn2" onClick={()=> this.selectResponse(2)}>
+                    <button id="btn2" style={{backgroundColor: `${this.state.colorClick2 ? 'blue': '#57636e' }`}} onClick={()=> this.selectResponse(2)}>
                       <span id="choice2">
                         {" "}
                         {
@@ -388,7 +396,7 @@ export default class QuizDificileiz extends Component {
                     </button>
                   </td>
                   <td>
-                    <button id="btn3" onClick={()=> this.selectResponse(3)}>
+                    <button id="btn3" style={{backgroundColor: `${this.state.colorClick3 ? 'blue': '#57636e' }`}} onClick={()=> this.selectResponse(3)}>
                       <span id="choice3">
                         {" "}
                         {
