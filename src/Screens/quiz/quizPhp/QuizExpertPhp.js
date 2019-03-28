@@ -7,6 +7,7 @@ export default class QuizExpertPhp extends Component {
     super(props);
     this.state = {
       resultat:0,
+      taux:10,
       userAnswers:this.initlist(10),
      // jsonQuiz :this.getQuizById('5c72b7126cc7633cd4898490'),
       correctAnswers:[[0],[1,2],[0],[2],[3],[3,2],[3],[3],[3],[3]],
@@ -205,11 +206,11 @@ export default class QuizExpertPhp extends Component {
     };
   }
 
-
   nextQuestion = () => {
     if (this.state.currentIndex < this.state.quizList.length - 1) {
       this.setState({
-        currentIndex: this.state.currentIndex + 1
+        currentIndex: this.state.currentIndex + 1,
+        taux:this.state.taux+10
       });
     }else if(this.state.currentIndex == this.state.quizList.length -1){
      this.setState({
@@ -238,7 +239,8 @@ export default class QuizExpertPhp extends Component {
   previousQuestion = () => {
     if (this.state.currentIndex > 0) {
       this.setState({
-        currentIndex: this.state.currentIndex - 1
+        currentIndex: this.state.currentIndex - 1,
+        taux:this.state.taux-10
       });
     }
   };
@@ -272,9 +274,31 @@ export default class QuizExpertPhp extends Component {
       if(!list.includes(number)){
           list.push(number);
           this.state.userAnswers[this.state.currentIndex]=list;
+          if(number==0){
+              this.setState({
+                 colorClick0:this.state.colorClick0=true
+             });
+              
+            }else if(number==1){
+              this.setState({
+                 colorClick0:this.state.colorClick1=true
+             });
+              
+            } else if(number==2){
+              this.setState({
+                 colorClick0:this.state.colorClick2=true
+             });
+              
+            } else if(number==3){
+              this.setState({
+                 colorClick0:this.state.colorClick3=true
+             });
+              
+            }
            this.setState({
          
             userAnswers:this.state.userAnswers
+            
         });
       }else{
          
@@ -288,6 +312,7 @@ export default class QuizExpertPhp extends Component {
      
   };
 
+
   goToChallenge = () => {
     this.setState({
       challengeView: true,
@@ -298,6 +323,20 @@ export default class QuizExpertPhp extends Component {
     const cView = this.state.challengeView
       console.log(this.state.userAnswers);
       console.log(this.state.resultat);
+
+      const styles = {
+        textinput: {
+            width:this.state.taux + '%'
+            
+        }
+     }
+
+     const stylesButton = {
+        textColor: {
+            BorderColor:'red'
+            
+        }
+     }
     return (
       <div>
         {
@@ -307,6 +346,9 @@ export default class QuizExpertPhp extends Component {
         <div className="grid">
           <div id="quiz">
             <h1>Quiz</h1>
+                <div className="progress">
+                    <div className="progress-bar progress-bar-striped bg-success" role="progressbar" style={styles.textinput} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{this.state.taux}</div>
+                </div>
             <hr style={{ marginBottom: "20px" }} />
 
             <p id="question">
